@@ -9,7 +9,32 @@ class parth
     public:
     int age;
     string name;
-    
+
+    //default const
+    parth()
+    {
+        this->age=00;
+        this->weight = 90;
+        cout<<"default"<<endl;
+    }
+
+
+     parth(int age)
+    {
+        this->age=age;
+        this->weight = 90;
+        cout<<"para"<<endl;
+    }
+
+    //copy const
+
+    parth(parth &obj)
+    {
+        this->age = obj.age;
+        this->weight = obj.weight;
+        cout<<"inside copy"<<endl;
+    }
+
 
     void eat()
     {
@@ -23,6 +48,10 @@ class parth
 
     void setweight(int w){
         weight = w;
+    }
+
+    ~parth(){
+        cout<<"destuctor"<<endl;
     }
 
 };
@@ -49,15 +78,17 @@ int main ()
     damm->age = 20;
 
 
-    
-
-
-
-
-
-
-
-
 cout<<"size of "<<sizeof(parth)<<endl;
+
+parth(89);
+parth();
+
+cout<<endl;
+parth singh3(*damm);
+
+parth singh5 = *damm;
+delete damm;
+
+
 return 0;
 }

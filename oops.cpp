@@ -1,94 +1,96 @@
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace  std;
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
 
 class parth
 {
-    private:
+private:
     int weight;
-    public:
+
+public:
     int age;
     string name;
 
-    //default const
+    // default const
     parth()
     {
-        this->age=00;
+        this->age = 00;
         this->weight = 90;
-        cout<<"default"<<endl;
+        cout << "default" << endl;
     }
 
-
-     parth(int age)
+    parth(int age)
     {
-        this->age=age;
+        this->age = age;
         this->weight = 90;
-        cout<<"para"<<endl;
+        cout << "para" << endl;
     }
 
-    //copy const
+    // copy const
 
     parth(parth &obj)
     {
         this->age = obj.age;
         this->weight = obj.weight;
-        cout<<"inside copy"<<endl;
+        cout << "inside copy" << endl;
     }
-
 
     void eat()
     {
-        cout<<"eating"<<endl;
-
+        cout << "eating" << endl;
     }
 
-    int getweight(){
+    int getweight()
+    {
         return weight;
     }
 
-    void setweight(int w){
+    void setweight(int w)
+    {
         weight = w;
     }
 
-    ~parth(){
-        cout<<"destuctor"<<endl;
+    ~parth()
+    {
+        cout << "destuctor" << endl;
     }
-
 };
 
-int main ()
+class dog : public parth
+{
+};
+
+int main()
 {
     parth singh;
     singh.age = 20;
-    cout<<singh.age<<endl;
+    cout << singh.age << endl;
 
     singh.eat();
     singh.setweight(90);
-    cout<< singh.getweight()<<endl;
+    cout << singh.getweight() << endl;
 
+    // dyanamic
 
+    parth *damm = new parth;
 
-    //dyanamic
+    (*damm).age = 15;
 
-    parth* damm = new parth;
-
-
-    (* damm).age = 15;
-    
     damm->age = 20;
 
+    cout << "size of " << sizeof(parth) << endl;
 
-cout<<"size of "<<sizeof(parth)<<endl;
+    parth(89);
+    parth();
 
-parth(89);
-parth();
+    cout << endl;
+    parth singh3(*damm);
 
-cout<<endl;
-parth singh3(*damm);
+    parth singh5 = *damm;
+    delete damm;
+    dog d1;
+    cout << "DOG" << endl;
+    d1.eat();
 
-parth singh5 = *damm;
-delete damm;
-
-
-return 0;
+    return 0;
 }

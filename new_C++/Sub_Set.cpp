@@ -1,33 +1,40 @@
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace  std;
+#include <iostream>
+#include <vector>
+using namespace std;
 
-void f (int i, int ar[],vector<int> &ds,int n)
+void printSubsequences(string str, int n, string output, int i, vector<string> &v)
 {
-    if ( i == n)
+    // base case
+    if (i == n)
     {
-        for (auto it : ds)
-        {
-            cout << it<<" ";
-        }
-        cout << endl;
+        v.push_back(output);
         return;
     }
 
-     f(i+1,ar,ds,n);
-    ds.push_back(ar[i]);
-    f(i+1,ar,ds,n);
-    ds.pop_back();
+    // include
+    printSubsequences(str, n, output + str[i], i + 1, v);
+
+    // exclude
+    printSubsequences(str, n, output, i + 1, v);
 }
 
-int main ()
+int main()
 {
-    int ar[]={3,2,1};
-    vector<int> ds;
-    int n = 3;
-     
-    f(0,ar,ds,n);
-   
- return 0;
+    string str = "abcd";
+    string output = "";
+    vector<string> v;
+    int i = 0;
+    int n = str.length();
+    printSubsequences(str, n, output, i, v);
 
+    cout << "Printing all subsequences " << endl;
+    for (auto val : v)
+    {
+        cout << val << " "<<endl;
+    }
+
+    cout << endl
+         << "Size of vector is: " << v.size() << endl;
+
+    return 0;
 }

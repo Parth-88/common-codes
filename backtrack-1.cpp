@@ -17,6 +17,7 @@ void printPermutation(string &str, int i) {
     swap(str[i], str[j]);
   }
 //neww
+//check nowgit 
 }
 int main() {
   string str = "abc";

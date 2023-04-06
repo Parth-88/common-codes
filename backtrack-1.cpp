@@ -16,7 +16,7 @@ void printPermutation(string &str, int i) {
     //backtracking - to recreate the original input string
     swap(str[i], str[j]);
   }
-
+//neww
 }
 int main() {
   string str = "abc";

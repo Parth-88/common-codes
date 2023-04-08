@@ -26,7 +26,8 @@ int main() {
 
          Animal* a = new Animal();
          a.speak();
-
+//limked list
+int aa = 5;
          Dog* a = new Dog();
          a.speak();
 

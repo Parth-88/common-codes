@@ -3,7 +3,7 @@
 using namespace  std;
 
 //easy
-
+  
 class node{
     public:
 

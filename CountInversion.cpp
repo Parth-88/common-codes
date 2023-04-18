@@ -1,0 +1,2 @@
+// function for count inversion
+

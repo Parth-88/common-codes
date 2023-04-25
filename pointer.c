@@ -68,7 +68,7 @@ struct person *personPtr, person1;
 
    void (*p) (int);
    p=&show;
-   (*p) (100);
+   (p) (100);
 
    printf("\n");
    printf("\n");
